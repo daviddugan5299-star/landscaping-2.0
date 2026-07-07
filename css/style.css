@@ -1,0 +1,79 @@
+
+/* Global CSS variables & Reset */
+:root {
+    --primary: #15803d;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+    --white: #ffffff;
+    --border-radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+body { color: var(--text-dark); line-height: 1.6; background-color: var(--white); }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; }
+.section-title { font-size: 2.5rem; margin-bottom: 25px; color: var(--text-dark); font-weight: 700; }
+
+.btn { display: inline-block; background: var(--primary); color: var(--white); padding: 14px 32px; border-radius: var(--border-radius); text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: none; cursor: pointer; text-align: center; }
+.btn:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
+/* Header */
+header { background: var(--white); box-shadow: 0 2px 15px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000; padding: 20px 0; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
+
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links li { list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 1.05rem; transition: color 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+
+.contact-top { display: flex; align-items: center; gap: 25px; }
+.phone-number { font-weight: 700; font-size: 1.15rem; color: var(--text-dark); text-decoration: none; }
+.mobile-menu-btn { display: none; background:none; border:none; font-size:1.8rem; cursor:pointer; color:var(--text-dark);}
+
+/* Page Header */
+.page-header { background: var(--primary); color: var(--white); padding: 90px 0; text-align: center; }
+.page-header h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing:-1px;}
+.page-header p { font-size: 1.3rem; opacity: 0.9; max-width: 600px; margin: 0 auto;}
+
+/* Hero */
+.hero { padding: 160px 0; color: var(--white); }
+.hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%); z-index: 1; }
+.hero-content { position: relative; z-index: 2; max-width: 650px; }
+.hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 24px; font-weight: 800; }
+.hero p { font-size: 1.25rem; margin-bottom: 35px; opacity: 0.9; }
+
+/* Grids & Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.card { background: var(--white); padding: 50px 35px; border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.05); }
+.card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+.card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary); }
+
+/* About Inner */
+.about-inner { display: flex; align-items: center; gap: 70px; }
+.about-img-wrap { flex: 1; }
+.about-img { width: 100%; border-radius: var(--border-radius); aspect-ratio: 4/3; object-fit: cover; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+.about-text { flex: 1; }
+.about-text h2 { font-size: 2.5rem; margin-bottom: 25px; font-weight: 800;}
+
+/* Footer */
+footer { background: var(--text-dark); color: #9ca3af; padding: 80px 0 30px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 60px; }
+.footer-col h4 { color: var(--white); margin-bottom: 25px; font-size: 1.2rem; font-weight: 600; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 15px; }
+.footer-col a { color: #9ca3af; text-decoration: none; transition: color 0.3s; }
+.footer-col a:hover { color: var(--white); }
+.footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; font-size: 0.95rem; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-inner { flex-direction: column; }
+    .hero h1 { font-size: 3rem; }
+    .nav-links { display: none; width:100%; position:absolute; top:100%; left:0; background:var(--white); flex-direction:column; padding:20px; box-shadow:0 10px 10px rgba(0,0,0,0.1);}
+    .nav-links.active { display:flex; }
+    .mobile-menu-btn { display:block; }
+    .contact-btn { display: none; }
+}
